@@ -1,0 +1,72 @@
+#{$BlogLayout1} {
+  padding: 28px 0;
+
+  &__container {
+    display: flex;
+  }
+
+  &__middleColumn {
+    width: 50%;
+    padding: 0px 16px;
+  }
+
+  &__leftColumn,
+  &__rightColumn {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+  }
+
+  &__leftColumn {
+    padding-right: 16px;
+  }
+
+  &__rightColumn {
+    padding-left: 16px;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed $silver;
+    margin: 8px 0px 16px;
+  }
+
+  &__blog1 {
+    width: 100%;
+
+    &-linkWrapper {
+      display: block;
+    }
+
+    &-thumbnail {
+      height: 150px;
+      margin-bottom: 8px;
+    }
+
+    &-title {
+      margin: 0;
+      font-size: 16px;
+      font-family: OpenSans-SemiBold;
+    }
+
+    &-linkWrapper,
+    &-thumbnail,
+    img {
+      width: 100%;
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__blog2 {
+    img {
+      object-fit: cover;
+      object-position: 50% 50%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

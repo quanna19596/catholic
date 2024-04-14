@@ -1,0 +1,58 @@
+@import './fonts.scss';
+@import './mixins.scss';
+@import './colors.scss';
+@import './constants.scss';
+@import './main-classes.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  position: relative;
+  width: 100%;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  margin: 0px;
+}
+
+.container {
+  max-width: calc(100% - 32px);
+}
+
+.container-fluid {
+  max-width: 100%;
+}
+
+.container,
+.container-fluid {
+  width: 100%;
+  margin: auto;
+  transition: $medium-animation;
+
+  @media screen and (min-width: $sm) {
+    max-width: 540px;
+  }
+
+  @media screen and (min-width: $md) {
+    max-width: 720px;
+  }
+
+  @media screen and (min-width: $lg) {
+    max-width: 960px;
+  }
+
+  @media screen and (min-width: $xl) {
+    max-width: 1140px;
+  }
+
+  // @media screen and (min-width: $xxl) {
+  //   max-width: 1320px;
+  // }
+}
+
+img {
+  vertical-align: bottom;
+}
