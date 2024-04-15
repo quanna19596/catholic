@@ -1,0 +1,194 @@
+#{$BlogLayout5} {
+  padding: 32px 0;
+  background-color: $primary-color;
+
+  &__title {
+    display: inline-block;
+    text-decoration: none;
+    color: $secondary-color;
+    font-size: 22px;
+    margin-bottom: 8px;
+    font-family: OpenSans-Bold;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: $white;
+    margin-bottom: 16px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+
+    @include min-width-992 {
+      margin-bottom: 0;
+      flex-direction: row;
+      width: calc(100% + 32px);
+      margin-left: -16px;
+    }
+  }
+
+  &__leftColumn,
+  &__rightColumn {
+    padding: 0;
+
+    @include min-width-992 {
+      padding: 0 16px;
+    }
+  }
+
+  &__leftColumn {
+    width: 100%;
+
+    @include min-width-992 {
+      width: calc(100% / 3 * 2);
+    }
+  }
+
+  &__rightColumn {
+    width: 100%;
+
+    @include min-width-992 {
+      width: calc(100% / 3);
+    }
+  }
+
+  &__blogsWithSmallThumbnail {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 32px);
+    margin-left: -16px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    border-bottom: 1px dashed $silver;
+
+    @include min-width-992 {
+      width: calc(100% + 32px);
+      margin-left: -16px;
+      margin-top: 28px;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  &__blog1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @include min-width-992 {
+      flex-direction: row;
+    }
+
+    &-seeMoreBtn {
+      display: none;
+
+      @include min-width-992 {
+        display: block;
+      }
+    }
+
+    &-thumbnailLink {
+      display: block;
+      width: 100%;
+      height: 220px;
+
+      @include min-width-992 {
+        width: 50%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-content {
+      margin-left: 8px;
+    }
+
+    &-title {
+      text-decoration: none;
+      color: $white;
+      font-size: 18px;
+      font-family: OpenSans-SemiBold;
+      margin: 8px 0 8px;
+      display: block;
+
+      @include min-width-992 {
+        margin: 0 0 8px;
+      }
+    }
+
+    &-summary {
+      color: $white;
+      font-size: 14px;
+      margin: 0 0 16px;
+    }
+  }
+
+  &__blog2 {
+    width: 50%;
+    padding: 16px;
+
+    @include min-width-992 {
+      width: 25%;
+      padding: 0 16px;
+    }
+
+    &-thumbnail {
+      width: 100%;
+      height: 125px;
+    }
+
+    &-title {
+      text-decoration: none;
+      color: $white;
+      font-size: 16px;
+      margin: 8px 0 0;
+      font-family: OpenSans-SemiBold;
+      display: block;
+    }
+  }
+
+  &__blog3 {
+    color: $white;
+    font-size: 16px;
+    font-family: OpenSans-SemiBold;
+    position: relative;
+    padding-left: 12px;
+    display: block;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $secondary-color;
+    }
+
+    &-title {
+      text-decoration: none;
+      color: $white;
+    }
+
+    &-divider {
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px dashed $silver;
+      margin: 8px 0;
+    }
+  }
+}

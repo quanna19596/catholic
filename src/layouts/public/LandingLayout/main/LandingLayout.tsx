@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import { Header } from '@/components';
+import { Footer, Header } from '@/components';
 
 import { TLandingLayoutProps } from './LandingLayout.types';
 
@@ -11,6 +11,7 @@ const LandingLayout: React.FC<TLandingLayoutProps> = () => {
     <div className='LandingLayout'>
       <Header />
       <Outlet />
+      <Footer />
     </div>
   );
 };

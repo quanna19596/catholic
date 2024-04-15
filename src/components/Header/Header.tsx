@@ -31,7 +31,9 @@ const Header: React.FC<THeaderProps> = () => {
         <div className='Header__menu-logo'>
           <img src='https://via.placeholder.com/305x104' alt='Logo' />
         </div>
-        <div className='Header__burgerMenu' onClick={handleClickBurgerMenu} />
+        <div className='Header__burgerMenu' onClick={handleClickBurgerMenu}>
+          <div className='Header__burgerMenu-main' />
+        </div>
         <div className={classNames('Header__menu-container container-fluid', { show: !isMobile || isOpenMenu })}>
           <ul className='Header__menu-wrapper'>
             {menuItems.map((menuItem) => (

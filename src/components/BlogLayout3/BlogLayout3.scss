@@ -1,0 +1,112 @@
+#{$BlogLayout3} {
+  padding: 32px 0;
+
+  &__title {
+    display: inline-block;
+    text-decoration: none;
+    color: $secondary-color;
+    font-size: 22px;
+    margin-bottom: 8px;
+    font-family: OpenSans-Bold;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: $black;
+    margin-bottom: 16px;
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+
+    @include min-width-992 {
+      flex-direction: row;
+      width: calc(100% + 32px);
+      margin-left: -16px;
+    }
+  }
+
+  &__leftColumn,
+  &__middleColumn,
+  &__rightColumn {
+    width: 100%;
+    padding: 0;
+
+    @include min-width-992 {
+      width: calc(100% / 3);
+      padding: 0 16px;
+    }
+  }
+
+  &__leftColumn,
+  &__middleColumn {
+    margin-bottom: 16px;
+
+    @include min-width-992 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__blog1 {
+    &-thumbnail {
+      width: 100%;
+      height: 220px;
+      margin-bottom: 8px;
+    }
+
+    &-title {
+      display: block;
+      margin: 0 0 8px;
+      color: $black;
+      font-size: 16px;
+      font-family: OpenSans-SemiBold;
+      text-decoration: none;
+    }
+
+    &-summary {
+      margin: 0;
+      color: $boulder;
+      font-size: 14px;
+    }
+  }
+
+  &__blog2 {
+    position: relative;
+    padding-left: 12px;
+    display: block;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $secondary-color;
+    }
+
+    &-title {
+      text-decoration: none;
+      color: $black;
+      font-size: 16px;
+      font-family: OpenSans-SemiBold;
+    }
+
+    &-divider {
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px dashed $silver;
+      margin: 8px 0;
+    }
+  }
+}

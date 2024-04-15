@@ -1,0 +1,14 @@
+#{$Button} {
+  padding: 4px 12px;
+  background-color: $secondary-color;
+  font-size: 18px;
+  font-family: OpenSans-Medium;
+  color: $black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $white;
+  }
+}

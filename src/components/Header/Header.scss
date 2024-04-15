@@ -62,7 +62,7 @@
         flex-direction: row;
       }
     }
-    
+
     &-logo {
       display: block;
       width: 45%;
@@ -96,31 +96,28 @@
   }
 
   &__burgerMenu {
-    display: block;
-    width: 24px;
-    height: 3px;
-    background-color: $white;
+    display: flex;
     margin-right: 12px;
-    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
 
     @include min-width-992 {
       display: none;
     }
 
-    &::before, &::after {
+    &-main {
+      width: 24px;
+      height: 3px;
+      background-color: $white;
+    }
+
+    &::before,
+    &::after {
       content: '';
       width: 24px;
       height: 3px;
       background-color: $white;
-      position: absolute;
-    }
-
-    &::before {
-      top: -8px;
-    }
-
-    &::after {
-      top: 8px;
     }
   }
 }
