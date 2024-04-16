@@ -84,6 +84,7 @@ export const downloadFile = (data: string, fileName: string): void => {
 };
 
 export const setCookie = (name: string, val: string | number | object): void => {
+  console.log(env.cookie.domain);
   cookie.save(name, val, { path: '/', domain: env.cookie.domain });
 };
 

@@ -1,3 +1,4 @@
+import { LoginForm } from '@/containers';
 import {
   DashboardLayout,
   DashboardLayoutDefault,
@@ -55,7 +56,7 @@ const routerConfig: TRouteConfig = {
       element: {
         component: DashboardLayout,
         isPrivate: true,
-        fallbackPermissionDenied: AppPermissionDenied
+        fallbackPermissionDenied: LoginForm
       },
       children: [
         {

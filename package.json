@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite --mode development",
+    "start": "vite --mode lc",
     "start:staging": "vite --mode staging",
     "start:prod": "vite --mode production",
     "build:development": "GENERATE_SOURCEMAP=false tsc && vite build --mode development",
@@ -42,6 +42,8 @@
     "formik": "^2.2.9",
     "history": "^5.3.0",
     "moment": "^2.29.4",
+    "primeflex": "^3.3.1",
+    "primereact": "^10.6.3",
     "qs": "^6.11.1",
     "react": "^18.2.0",
     "react-cookies": "^0.1.1",

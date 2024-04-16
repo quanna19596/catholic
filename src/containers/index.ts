@@ -1,4 +1,5 @@
 import AGroupOfComponents, { TAGroupOfComponentsProps } from './AGroupOfComponents';
+import LoginForm, { TLoginFormProps } from './LoginForm';
 
-export { AGroupOfComponents };
-export type { TAGroupOfComponentsProps };
+export { AGroupOfComponents, LoginForm };
+export type { TAGroupOfComponentsProps, TLoginFormProps };

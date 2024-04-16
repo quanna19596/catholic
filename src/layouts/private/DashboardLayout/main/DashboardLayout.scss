@@ -1,2 +1,13 @@
 #{$DashboardLayout} {
+  background-color: $athens-gray;
+
+  &__sidebar {
+    background-color: $white;
+  }
+
+  &__main {
+    width: calc(100% - 20rem);
+    float: right;
+    padding: 16px;
+  }
 }
