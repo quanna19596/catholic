@@ -1,5 +1,7 @@
 import classNames from 'classnames';
 
+import { handleClickAnchor } from '@/utils';
+
 import { TBlogLayout4Props } from './BlogLayout4.types';
 
 import './BlogLayout4.scss';
@@ -12,17 +14,17 @@ const BlogLayout4: React.FC<TBlogLayout4Props> = ({ title, blogs }) => {
   return (
     <div className='BlogLayout4'>
       <div className='BlogLayout4__container container'>
-        <a href={title.url} className='BlogLayout4__title'>
+        <a onClick={handleClickAnchor} href={title.url} className='BlogLayout4__title'>
           {title.label}
         </a>
         <div className='BlogLayout4__divider' />
         <div className='BlogLayout4__wrapper'>
           <div className='BlogLayout4__leftColumn'>
             <div className='BlogLayout4__blog1'>
-              <a href={blog1.url}>
+              <a onClick={handleClickAnchor} href={blog1.url}>
                 <img src={blog1.thumbnail} alt={blog1.title} className='BlogLayout4__blog1-thumbnail' />
               </a>
-              <a href={blog1.url} className='BlogLayout4__blog1-title'>
+              <a onClick={handleClickAnchor} href={blog1.url} className='BlogLayout4__blog1-title'>
                 {blog1.title}
               </a>
               <p className='BlogLayout4__blog1-summary'>{blog1.summary?.includes('...') ? blog1.summary : `${blog1.summary}...`}</p>
@@ -34,7 +36,7 @@ const BlogLayout4: React.FC<TBlogLayout4Props> = ({ title, blogs }) => {
                 key={`${blog.title}-${blog.url}`}
                 className={classNames('BlogLayout4__blog2', { divider: blogIdx < middleBlogs.length - 1 })}
               >
-                <a href={blog.url} className='BlogLayout4__blog2-title'>
+                <a onClick={handleClickAnchor} href={blog.url} className='BlogLayout4__blog2-title'>
                   {blog.title}
                 </a>
                 <p className='BlogLayout4__blog2-summary'>{blog.summary?.includes('...') ? blog.summary : `${blog.summary}...`}</p>
@@ -47,10 +49,10 @@ const BlogLayout4: React.FC<TBlogLayout4Props> = ({ title, blogs }) => {
                 key={`${blog.title}-${blog.url}`}
                 className={classNames('BlogLayout4__blog3', { divider: blogIdx < middleBlogs.length - 1 })}
               >
-                <a href={blog.url}>
+                <a onClick={handleClickAnchor} href={blog.url}>
                   <img src={blog1.thumbnail} alt={blog1.title} className='BlogLayout4__blog3-thumbnail' />
                 </a>
-                <a href={blog.url} className='BlogLayout4__blog3-title'>
+                <a onClick={handleClickAnchor} href={blog.url} className='BlogLayout4__blog3-title'>
                   {blog1.title}
                 </a>
                 <p className='BlogLayout4__blog3-summary'>{blog1.summary?.includes('...') ? blog1.summary : `${blog1.summary}...`}</p>

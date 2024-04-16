@@ -1,5 +1,5 @@
 import Home, { THomeProps } from './Home';
-import SignIn, { TSignInProps } from './SignIn';
+import News, { TNewsProps } from './News';
 
-export { Home, SignIn };
-export type { THomeProps, TSignInProps };
+export { Home, News };
+export type { THomeProps, TNewsProps };

@@ -1,2 +1,31 @@
 #{$Breadcrumb} {
+  display: flex;
+  align-items: center;
+
+  &__crumb {
+    &-label {
+      color: $primary-color;
+      font-family: OpenSans-Bold;
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        color: $secondary-color;
+      }
+
+      &.current {
+        color: $black;
+        cursor: auto;
+        font-family: OpenSans-Regular;
+
+        &:hover {
+          color: $black;
+        }
+      }
+    }
+
+    &-arrow {
+      margin: 0 8px;
+    }
+  }
 }

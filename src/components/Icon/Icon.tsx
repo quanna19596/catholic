@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { EIconName, TIconProps } from '@/components/Icon';
 
 import Cart from './Cart';
+import UpArrow from './UpArrow';
 
 import './Icon.scss';
 
@@ -11,6 +12,8 @@ const Icon: React.FC<TIconProps> = ({ name, className, size = 16, onClick, ...co
     switch (name) {
       case EIconName.CART:
         return <Cart {...colorProps} />;
+      case EIconName.UP_ARROW:
+        return <UpArrow {...colorProps} />;
       default:
         return <></>;
     }

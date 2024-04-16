@@ -22,8 +22,8 @@ export const AppNotFound = lazy(() => retryLoadComponent(() => import('@/pages/c
 export const AppPermissionDenied = lazy(() => retryLoadComponent(() => import('@/pages/common/AppPermissionDenied')));
 
 // [BEGIN] Public
-export const SignIn = lazy(() => retryLoadComponent(() => import('@/pages/public/SignIn')));
 export const Home = lazy(() => retryLoadComponent(() => import('@/pages/public/Home')));
+export const News = lazy(() => retryLoadComponent(() => import('@/pages/public/News')));
 // [END] Public
 
 // [BEGIN] Private

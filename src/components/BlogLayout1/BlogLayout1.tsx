@@ -1,6 +1,5 @@
-import { EDevice } from '@/enums';
-import { useAppSelector } from '@/redux';
 import { TBlog } from '@/types';
+import { handleClickAnchor, useResize } from '@/utils';
 
 import { TBlogLayout1Props } from './BlogLayout1.types';
 
@@ -10,10 +9,10 @@ const Blog1: React.FC<TBlog> = ({ title, url, thumbnail }) => {
   return (
     <div className='BlogLayout1__blog1'>
       <div className='BlogLayout1__blog1-wrapper'>
-        <a className='BlogLayout1__blog1-thumbnail' href={url}>
+        <a onClick={handleClickAnchor} className='BlogLayout1__blog1-thumbnail' href={url}>
           <img src={thumbnail} alt={title} />
         </a>
-        <a className='BlogLayout1__blog1-title' href={url}>
+        <a onClick={handleClickAnchor} className='BlogLayout1__blog1-title' href={url}>
           {title}
         </a>
       </div>
@@ -25,11 +24,11 @@ const Blog2: React.FC<TBlog> = ({ title, url, summary, thumbnail }) => {
   return (
     <div className='BlogLayout1__blog2'>
       <div className='BlogLayout1__blog2-wrapper'>
-        <a className='BlogLayout1__blog2-thumbnail' href={url}>
+        <a onClick={handleClickAnchor} className='BlogLayout1__blog2-thumbnail' href={url}>
           <img src={thumbnail} alt={title} />
         </a>
         <div className='BlogLayout1__blog2-content'>
-          <a className='BlogLayout1__blog2-title' href={url}>
+          <a onClick={handleClickAnchor} className='BlogLayout1__blog2-title' href={url}>
             {title}
           </a>
           <h3 className='BlogLayout1__blog2-summary'>{summary}</h3>
@@ -40,7 +39,7 @@ const Blog2: React.FC<TBlog> = ({ title, url, summary, thumbnail }) => {
 };
 
 const BlogLayout1: React.FC<TBlogLayout1Props> = ({ blogs }) => {
-  const isMobile = useAppSelector((state) => state.ui.device.type === EDevice.MOBILE);
+  const { isMobileView } = useResize();
 
   return (
     <div className='BlogLayout1'>
@@ -49,7 +48,7 @@ const BlogLayout1: React.FC<TBlogLayout1Props> = ({ blogs }) => {
           <Blog1 {...blogs[0]} />
           <div className='BlogLayout1__divider' />
           <Blog1 {...blogs[1]} />
-          {isMobile && <div className='BlogLayout1__divider' />}
+          {isMobileView && <div className='BlogLayout1__divider' />}
         </div>
         <div className='BlogLayout1__middleColumn'>
           <Blog2 {...blogs[2]} />

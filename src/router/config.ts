@@ -7,10 +7,9 @@ import {
   LandingLayout,
   LandingLayoutDefault,
   LandingLayoutError,
-  LandingLayoutNotFound,
-  LandingLayoutPermissionDenied
+  LandingLayoutNotFound
 } from '@/layouts';
-import { AppError, AppNotFound, AppPermissionDenied, SignIn, Users } from '@/pages';
+import { AppError, AppNotFound, AppPermissionDenied, News, Users } from '@/pages';
 import { TRouteConfig } from '@/router';
 
 import PATHS from './paths';
@@ -36,11 +35,9 @@ const routerConfig: TRouteConfig = {
           }
         },
         {
-          path: PATHS.PAGE.SIGN_IN(),
+          path: PATHS.PAGE.NEWS(),
           element: {
-            component: SignIn,
-            isPrivate: true,
-            fallbackPermissionDenied: LandingLayoutPermissionDenied,
+            component: News,
             errorComponent: LandingLayoutError
           }
         },

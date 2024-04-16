@@ -1,2 +1,20 @@
 #{$LandingLayout} {
+  &__onTopArrow {
+    cursor: pointer;
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    background-color: $secondary-color;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    &:hover {
+      background-color: $zest;
+    }
+  }
 }

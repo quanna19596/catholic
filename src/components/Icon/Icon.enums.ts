@@ -1,3 +1,4 @@
 export enum EIconName {
-  CART = 'cart'
+  CART = 'cart',
+  UP_ARROW = 'up-arrow'
 }

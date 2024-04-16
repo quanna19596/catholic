@@ -6,11 +6,10 @@ const PATHS = {
     DASHBOARD: (): string => '/dashboard'
   },
   PAGE: {
-    SIGN_IN: (): string => '/sign-in',
     USERS: (): string => '/users',
     NOT_FOUND: (): string => '/not-found',
-    PRODUCT_DETAIL: (params?: TPathParams): string => `/products/${params?.slug || ':slug'}`,
-    HOME: (): string => `/`
+    HOME: (): string => `/`,
+    NEWS: (params?: TPathParams): string => `/${params?.category || ':category'}`
   },
   SPECIAL: {
     EMPTY: (): string => '',

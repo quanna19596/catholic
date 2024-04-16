@@ -89,8 +89,10 @@
     padding: 8px 20px;
     transition: $medium-animation;
     height: 100%;
+    cursor: pointer;
 
     &:hover {
+      color: $white;
       background-color: $secondary-color;
     }
   }

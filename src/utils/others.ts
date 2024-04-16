@@ -1,4 +1,7 @@
+import { MouseEvent } from 'react';
+
 import { EBreakpoints, EDevice } from '@/enums';
+import { history } from '@/router';
 
 export const randomEnumValue = (enumeration: { [key: string]: any }): any => {
   const values = Object.keys(enumeration);
@@ -26,4 +29,9 @@ export const getDeviceType = (): EDevice => {
   if (windowWidth > EBreakpoints.SM && windowWidth <= EBreakpoints.MD) return EDevice.TABLET;
 
   return EDevice.MOBILE;
+};
+
+export const handleClickAnchor = (event: MouseEvent<HTMLAnchorElement>): void => {
+  event.preventDefault();
+  history.push(event.currentTarget.href);
 };

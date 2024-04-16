@@ -5,38 +5,38 @@ export const menuItems = [
   },
   {
     label: 'TUYÊN UÝ',
-    url: ''
+    url: 'tuyen-uy'
   },
   {
     label: 'THÁNH LỄ',
-    url: ''
+    url: 'thanh-le'
   },
   {
     label: 'THÔNG TIN',
-    url: ''
+    url: 'thong-tin'
   },
   {
     label: 'CỘNG ĐOÀN',
-    url: ''
+    url: 'cong-doan'
   },
   {
     label: 'THIẾU NHI',
-    url: ''
+    url: 'thieu-nhi'
   },
   {
     label: 'HÌNH ẢNH',
-    url: ''
+    url: 'hinh-anh'
   },
   {
     label: 'VIDEO',
-    url: ''
+    url: 'video'
   },
   {
     label: 'ĐHY THUẬN',
-    url: ''
+    url: 'dhy-thuan'
   },
   {
     label: 'R.I.P',
-    url: ''
+    url: 'rip'
   }
 ];
