@@ -28,4 +28,9 @@ export const News = lazy(() => retryLoadComponent(() => import('@/pages/public/N
 
 // [BEGIN] Private
 export const Users = lazy(() => retryLoadComponent(() => import('@/pages/private/Users')));
+export const NewsManagement = lazy(() => retryLoadComponent(() => import('@/pages/private/NewsManagement')));
+export const NewsLayoutManagement = lazy(() => retryLoadComponent(() => import('@/pages/private/NewsLayoutManagement')));
+export const PageLayoutManagement = lazy(() => retryLoadComponent(() => import('@/pages/private/PageLayoutManagement')));
+export const CreateNews = lazy(() => retryLoadComponent(() => import('@/pages/private/CreateNews')));
+export const EditNews = lazy(() => retryLoadComponent(() => import('@/pages/private/EditNews')));
 // [END] Private

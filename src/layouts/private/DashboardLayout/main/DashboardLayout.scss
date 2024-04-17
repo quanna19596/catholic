@@ -1,13 +1,16 @@
 #{$DashboardLayout} {
   background-color: $athens-gray;
+  display: flex;
 
   &__sidebar {
     background-color: $white;
+    width: 20rem;
+    height: 100%;
   }
 
   &__main {
     width: calc(100% - 20rem);
     float: right;
-    padding: 16px;
+    padding: 24px 24px 48px;
   }
 }

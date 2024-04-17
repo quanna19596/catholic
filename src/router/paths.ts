@@ -9,7 +9,12 @@ const PATHS = {
     USERS: (): string => '/users',
     NOT_FOUND: (): string => '/not-found',
     HOME: (): string => `/`,
-    NEWS: (params?: TPathParams): string => `/${params?.category || ':category'}`
+    NEWS: (params?: TPathParams): string => `/${params?.category || ':category'}`,
+    NEWS_MANAGEMENT: (): string => `/news`,
+    NEWS_LAYOUT_MANAGEMENT: (): string => `/news-layout`,
+    PAGE_LAYOUT_MANAGEMENT: (): string => `/page-layout`,
+    CREATE_NEWS: (): string => `/news/create`,
+    EDIT_NEWS: (params?: TPathParams): string => `/news/${params?.newsId || ':newsId'}`
   },
   SPECIAL: {
     EMPTY: (): string => '',
