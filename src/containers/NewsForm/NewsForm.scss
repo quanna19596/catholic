@@ -1,2 +1,9 @@
 #{$NewsForm} {
+  .p-inline-message {
+    justify-content: flex-start;
+  }
+
+  &__inputLabel {
+    font-weight: bold;
+  }
 }

@@ -2,7 +2,6 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
 import { Avatar } from 'primereact/avatar';
 import { MenuItem } from 'primereact/menuitem';
-import { Sidebar } from 'primereact/sidebar';
 
 import { PATHS } from '@/router';
 import { clearTokens } from '@/utils';
@@ -59,10 +58,10 @@ const DashboardLayout: React.FC<TDashboardLayoutProps> = () => {
   return (
     <div className='DashboardLayout'>
       <div className='DashboardLayout__sidebar'>
-        <div className='min-h-screen flex relative lg:static surface-ground'>
+        <div className='flex relative lg:static surface-ground h-full'>
           <div
             id='app-sidebar-2'
-            className='surface-section h-screen hidden lg:block flex-shrink-0 absolute lg:static left-0 top-0 z-1 border-right-1 surface-border select-none'
+            className='surface-section hidden lg:block flex-shrink-0 absolute lg:static left-0 top-0 z-1 border-right-1 surface-border select-none'
             style={{ width: '100%' }}
           >
             <div className='flex flex-column h-full'>
@@ -82,10 +81,20 @@ const DashboardLayout: React.FC<TDashboardLayoutProps> = () => {
                             onClick={(): void => {
                               handleClickMenuItem(item);
                             }}
-                            className='p-ripple flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors w-full'
+                            className={classNames(
+                              'DashboardLayout__sidebar-menuItem',
+                              'p-ripple flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors w-full',
+                              { active: window.location.pathname === `${PATHS.LAYOUT.DASHBOARD()}${item.url}` }
+                            )}
                           >
-                            <i className={classNames(item.icon, 'mr-2')}></i>
-                            <span className='font-medium'>{item.label}</span>
+                            <i className={classNames('DashboardLayout__sidebar-menuItemIcon', item.icon, 'mr-2', { error: !item.url })}></i>
+                            <span
+                              className={classNames('DashboardLayout__sidebar-menuItemLabel', !item.url ? 'font-bold' : 'font-medium', {
+                                error: !item.url
+                              })}
+                            >
+                              {item.label}
+                            </span>
                           </div>
                         </li>
                       ))}
@@ -93,7 +102,7 @@ const DashboardLayout: React.FC<TDashboardLayoutProps> = () => {
                   </li>
                 </ul>
               </div>
-              <div className='mt-auto'>
+              <div className='mt-auto w-full flex-1 flex flex-column justify-content-end'>
                 <hr className='mb-3 mx-3 border-top-1 border-none surface-border' />
                 <div className='m-3 flex align-items-center cursor-pointer p-3 gap-2 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple'>
                   <Avatar image='https://primefaces.org/cdn/primereact/images/avatar/amyelsner.png' shape='circle' />

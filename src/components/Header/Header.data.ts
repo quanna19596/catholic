@@ -1,4 +1,4 @@
-export const menuItems = [
+export const headerMenuItems = [
   {
     label: 'TRANG CHỦ',
     url: ''

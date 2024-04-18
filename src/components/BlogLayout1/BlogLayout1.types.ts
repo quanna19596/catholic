@@ -1,5 +1,3 @@
-import { TBlog } from '@/types';
+import { TBlogLayout } from '@/types';
 
-export type TBlogLayout1Props = {
-  blogs: TBlog[];
-};
+export type TBlogLayout1Props = TBlogLayout;

@@ -1,0 +1,18 @@
+#{$Editor} {
+  &.error {
+    .ck.ck-editor {
+      border: 1px solid $mandy;
+      border-radius: 6px;
+    }
+  }
+
+  .ck-toolbar {
+    border-top-left-radius: 6px !important;
+    border-top-right-radius: 6px !important;
+  }
+
+  .ck-content {
+    border-bottom-left-radius: 6px !important;
+    border-bottom-right-radius: 6px !important;
+  }
+}

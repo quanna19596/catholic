@@ -1,2 +1,9 @@
 #{$PageLayoutManagement} {
+  .p-card-title {
+    margin: 0;
+  }
+
+  &__menuItem:hover {
+    background-color: $athens-gray;
+  }
 }

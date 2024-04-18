@@ -14,7 +14,8 @@ const PATHS = {
     NEWS_LAYOUT_MANAGEMENT: (): string => `/news-layout`,
     PAGE_LAYOUT_MANAGEMENT: (): string => `/page-layout`,
     CREATE_NEWS: (): string => `/news/create`,
-    EDIT_NEWS: (params?: TPathParams): string => `/news/${params?.newsId || ':newsId'}`
+    EDIT_NEWS: (params?: TPathParams): string => `/news/${params?.newsId || ':newsId'}`,
+    EDIT_PAGE_LAYOUT: (params?: TPathParams): string => `/page-layout/${params?.page || ':page'}`
   },
   SPECIAL: {
     EMPTY: (): string => '',

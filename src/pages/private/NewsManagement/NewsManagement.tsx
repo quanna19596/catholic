@@ -7,20 +7,14 @@ import { DataTable } from 'primereact/datatable';
 import { Toast } from 'primereact/toast';
 
 import { PATHS } from '@/router';
-import { getArrayFrom0To } from '@/utils';
+import { dummyBlog, getArrayFrom0To } from '@/utils';
 
 import { TNewsManagementProps } from './NewsManagement.types';
 
 import './NewsManagement.scss';
 
 const NewsManagement: React.FC<TNewsManagementProps> = () => {
-  const news = getArrayFrom0To(10).map((el) => ({
-    id: `${el}`,
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus sit amet',
-    thumbnail: 'https://via.placeholder.com/210x150',
-    url: 'https://google.com',
-    summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus sit amet Lorem ipsum dolor sit amet'
-  }));
+  const news = getArrayFrom0To(10).map((el) => ({ id: el.toString(), ...dummyBlog }));
 
   const navigate = useNavigate();
   const toast = useRef(null);
@@ -47,23 +41,21 @@ const NewsManagement: React.FC<TNewsManagementProps> = () => {
   };
 
   const openDialogConfirmDelete = (): void => {
-    if (newsPrepareToDelete) {
-      confirmDialog({
-        message: 'Bạn có muốn xoá bài viết này?',
-        header: 'Xoá bài viết',
-        icon: 'pi pi-info-circle',
-        defaultFocus: 'reject',
-        acceptClassName: 'p-button-danger',
-        acceptLabel: 'Xoá',
-        rejectLabel: 'Không xoá',
-        accept: () => {
-          console.log(newsPrepareToDelete);
-        },
-        reject: () => {
-          setNewsPrepareToDelete(undefined);
-        }
-      });
-    }
+    confirmDialog({
+      message: 'Bạn có muốn xoá bài viết này?',
+      header: 'Xoá bài viết',
+      icon: 'pi pi-info-circle',
+      defaultFocus: 'reject',
+      acceptClassName: 'p-button-danger',
+      acceptLabel: 'Xoá',
+      rejectLabel: 'Không xoá',
+      accept: () => {
+        console.log(newsPrepareToDelete);
+      },
+      reject: () => {
+        setNewsPrepareToDelete(undefined);
+      }
+    });
   };
 
   const goToCreateNewsPage = (): void => {

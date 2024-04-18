@@ -1,13 +1,14 @@
-import { handleClickAnchor } from '@/utils';
+import { BlogWrapper } from '@/components';
+import { getBlogsRendered, handleClickAnchor } from '@/utils';
 
 import { TBlogLayout3Props } from './BlogLayout3.types';
 
 import './BlogLayout3.scss';
 
 const BlogLayout3: React.FC<TBlogLayout3Props> = ({ title, blogs }) => {
-  const blog1 = blogs[0];
-  const blog2 = blogs[1];
-  const blogsWithoutThumbnail = [blogs[2], blogs[3], blogs[4], blogs[5], blogs[6], blogs[7]];
+  const blogsRendered = getBlogsRendered({ max: 8, blogs });
+  const blogsWithoutThumbnail = blogsRendered.filter((_, blogIdx) => blogIdx > 1);
+
   return (
     <div className='BlogLayout3'>
       <div className='BlogLayout3__container container'>
@@ -17,35 +18,47 @@ const BlogLayout3: React.FC<TBlogLayout3Props> = ({ title, blogs }) => {
         <div className='BlogLayout3__divider' />
         <div className='BlogLayout3__wrapper'>
           <div className='BlogLayout3__leftColumn'>
-            <div className='BlogLayout3__blog1'>
-              <a onClick={handleClickAnchor} href={blog1.url}>
-                <img src={blog1.thumbnail} alt={blog1.title} className='BlogLayout3__blog1-thumbnail' />
-              </a>
-              <a onClick={handleClickAnchor} href={blog1.url} className='BlogLayout3__blog1-title'>
-                {blog1.title}
-              </a>
-              <p className='BlogLayout3__blog1-summary'>{blog1.summary?.includes('...') ? blog1.summary : `${blog1.summary}...`}</p>
-            </div>
+            <BlogWrapper className='BlogLayout3__blog1' blog={blogsRendered[0]}>
+              {(blog) => (
+                <>
+                  <a onClick={handleClickAnchor} href={blog.url}>
+                    <img src={blog.thumbnail} alt={blog.title} className='BlogLayout3__blog1-thumbnail' />
+                  </a>
+                  <a onClick={handleClickAnchor} href={blog.url} className='BlogLayout3__blog1-title'>
+                    {blog.title}
+                  </a>
+                  <p className='BlogLayout3__blog1-summary'>{blog.summary?.includes('...') ? blog.summary : `${blog.summary}...`}</p>
+                </>
+              )}
+            </BlogWrapper>
           </div>
           <div className='BlogLayout3__middleColumn'>
-            <div className='BlogLayout3__blog1'>
-              <a onClick={handleClickAnchor} href={blog2.url}>
-                <img src={blog2.thumbnail} alt={blog2.title} className='BlogLayout3__blog1-thumbnail' />
-              </a>
-              <a onClick={handleClickAnchor} href={blog2.url} className='BlogLayout3__blog1-title'>
-                {blog2.title}
-              </a>
-              <p className='BlogLayout3__blog1-summary'>{blog1.summary?.includes('...') ? blog1.summary : `${blog1.summary}...`}</p>
-            </div>
+            <BlogWrapper className='BlogLayout3__blog1' blog={blogsRendered[1]}>
+              {(blog) => (
+                <>
+                  <a onClick={handleClickAnchor} href={blog.url}>
+                    <img src={blog.thumbnail} alt={blog.title} className='BlogLayout3__blog1-thumbnail' />
+                  </a>
+                  <a onClick={handleClickAnchor} href={blog.url} className='BlogLayout3__blog1-title'>
+                    {blog.title}
+                  </a>
+                  <p className='BlogLayout3__blog1-summary'>{blog.summary?.includes('...') ? blog.summary : `${blog.summary}...`}</p>
+                </>
+              )}
+            </BlogWrapper>
           </div>
           <div className='BlogLayout3__rightColumn'>
             {blogsWithoutThumbnail.map((blog, blogIdx) => (
-              <div key={`${blog.title}-${blog.url}`} className='BlogLayout3__blog2'>
-                <a onClick={handleClickAnchor} href={blog.url} className='BlogLayout3__blog2-title'>
-                  {blog.title}
-                </a>
-                {blogIdx < blogsWithoutThumbnail.length - 1 && <div className='BlogLayout3__blog2-divider' />}
-              </div>
+              <BlogWrapper key={blogIdx} className='BlogLayout3__blog2' blog={blog}>
+                {(blog) => (
+                  <>
+                    <a onClick={handleClickAnchor} href={blog.url} className='BlogLayout3__blog2-title'>
+                      {blog.title}
+                    </a>
+                    {blogIdx < blogsWithoutThumbnail.length - 1 && <div className='BlogLayout3__blog2-divider' />}
+                  </>
+                )}
+              </BlogWrapper>
             ))}
           </div>
         </div>

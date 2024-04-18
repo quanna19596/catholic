@@ -1,7 +1,8 @@
 import { MouseEvent } from 'react';
 
 import { EBreakpoints, EDevice } from '@/enums';
-import { history } from '@/router';
+import { history, PATHS } from '@/router';
+import { TBlog } from '@/types';
 
 export const randomEnumValue = (enumeration: { [key: string]: any }): any => {
   const values = Object.keys(enumeration);
@@ -32,6 +33,22 @@ export const getDeviceType = (): EDevice => {
 };
 
 export const handleClickAnchor = (event: MouseEvent<HTMLAnchorElement>): void => {
+  const isPreviewInDashboard = window.location.pathname.includes(PATHS.LAYOUT.DASHBOARD());
   event.preventDefault();
-  history.push(event.currentTarget.href);
+  if (!isPreviewInDashboard) history.push(event.currentTarget.href);
+};
+
+export const getBlogsRendered = ({ max, blogs }: { max: number; blogs: (TBlog | undefined)[] }): (TBlog | undefined)[] => {
+  const maxBlogs = max;
+  const blogSlots = getArrayFrom0To(maxBlogs);
+  const blogsRendered = blogSlots.map((_, slotIdx) => blogs[slotIdx] || undefined);
+  return blogsRendered;
+};
+
+export const dummyBlog = {
+  title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus sit amet',
+  thumbnail: 'https://via.placeholder.com/210x150',
+  url: 'https://google.com',
+  summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus sit amet Lorem ipsum dolor sit amet',
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus sit amet Lorem ipsum dolor sit amet'
 };

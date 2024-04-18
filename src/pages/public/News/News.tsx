@@ -2,7 +2,7 @@ import { useLocation, useParams } from 'react-router-dom';
 
 import { BlogLayout7, Breadcrumb } from '@/components';
 import { PATHS } from '@/router';
-import { capitalize, getArrayFrom0To } from '@/utils';
+import { capitalize, dummyBlog, getArrayFrom0To } from '@/utils';
 
 import { TNewsProps } from './News.types';
 
@@ -23,12 +23,7 @@ const News: React.FC<TNewsProps> = () => {
       <BlogLayout7
         className='News__blogs'
         title={{ label: 'Title', url: 'https://google.com' }}
-        blogs={getArrayFrom0To(10).map(() => ({
-          title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-          thumbnail: 'https://via.placeholder.com/210x150',
-          url: 'https://google.com',
-          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
-        }))}
+        blogs={getArrayFrom0To(10).map(() => dummyBlog)}
       />
     </div>
   );

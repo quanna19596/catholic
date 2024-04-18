@@ -2,12 +2,10 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
 
-import { EDevice } from '@/enums';
-import { useAppSelector } from '@/redux';
 import { PATHS } from '@/router';
 import { useResize } from '@/utils';
 
-import { menuItems } from './Header.data';
+import { headerMenuItems } from './Header.data';
 import { THeaderProps } from './Header.types';
 
 import './Header.scss';
@@ -48,7 +46,7 @@ const Header: React.FC<THeaderProps> = () => {
         </div>
         <div className={classNames('Header__menu-container container-fluid', { show: !isMobileView || isOpenMenu })}>
           <ul className='Header__menu-wrapper'>
-            {menuItems.map((menuItem) => (
+            {headerMenuItems.map((menuItem) => (
               <li className='Header__menuItem' key={`${menuItem.label} - ${menuItem.url}`}>
                 <div className='Header__menuLink' onClick={(): void => goToNewsPage(menuItem)}>
                   {menuItem.label}

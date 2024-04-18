@@ -1,10 +1,3 @@
-import { TBlog } from '@/types';
+import { TBlogLayout } from '@/types';
 
-export type TBlogLayout7Props = {
-  title: {
-    label: string;
-    url: string;
-  };
-  blogs: TBlog[];
-  className?: string;
-};
+export type TBlogLayout7Props = TBlogLayout;

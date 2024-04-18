@@ -16,6 +16,7 @@ import {
   AppPermissionDenied,
   CreateNews,
   EditNews,
+  EditPageLayout,
   News,
   NewsLayoutManagement,
   NewsManagement,
@@ -126,6 +127,15 @@ const routerConfig: TRouteConfig = {
           path: PATHS.PAGE.EDIT_NEWS(),
           element: {
             component: EditNews,
+            isPrivate: true,
+            fallbackPermissionDenied: DashboardLayoutPermissionDenied,
+            errorComponent: DashboardLayoutError
+          }
+        },
+        {
+          path: PATHS.PAGE.EDIT_PAGE_LAYOUT(),
+          element: {
+            component: EditPageLayout,
             isPrivate: true,
             fallbackPermissionDenied: DashboardLayoutPermissionDenied,
             errorComponent: DashboardLayoutError

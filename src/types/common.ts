@@ -5,3 +5,12 @@ export type TBlog = {
   summary?: string;
   thumbnail?: string;
 };
+
+export type TBlogLayout = {
+  title: {
+    label: string;
+    url: string;
+  };
+  blogs: (TBlog | undefined)[];
+  className?: string;
+};

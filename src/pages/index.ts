@@ -33,4 +33,5 @@ export const NewsLayoutManagement = lazy(() => retryLoadComponent(() => import('
 export const PageLayoutManagement = lazy(() => retryLoadComponent(() => import('@/pages/private/PageLayoutManagement')));
 export const CreateNews = lazy(() => retryLoadComponent(() => import('@/pages/private/CreateNews')));
 export const EditNews = lazy(() => retryLoadComponent(() => import('@/pages/private/EditNews')));
+export const EditPageLayout = lazy(() => retryLoadComponent(() => import('@/pages/private/EditPageLayout')));
 // [END] Private

@@ -1,11 +1,27 @@
 #{$DashboardLayout} {
   background-color: $athens-gray;
   display: flex;
+  min-height: 100vh;
 
   &__sidebar {
     background-color: $white;
     width: 20rem;
-    height: 100%;
+
+    &-menuItem {
+      &.active {
+        background-color: $athens-gray;
+      }
+    }
+
+    &-menuItemIcon,
+    &-menuItemLabel {
+      color: $oxford-blue;
+
+      &.error {
+        color: $persimmon;
+        font-weight: bold;
+      }
+    }
   }
 
   &__main {
