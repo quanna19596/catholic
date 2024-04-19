@@ -6,20 +6,20 @@ import EditorBuild from 'ckeditor5-custom-build/build/ckeditor';
 import classNames from 'classnames';
 import { Message } from 'primereact/message';
 
-import env from '@/env';
-import { useAppDispatch } from '@/redux';
-
+// import env from '@/env';
+// import { useAppDispatch } from '@/redux';
 import { TEditorProps } from './Editor.types';
 
 import './Editor.scss';
 
 const Editor: React.FC<TEditorProps> = ({ data, onChange, error, helperText, ...rest }) => {
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
 
   function uploadAdapter(loader: any): { upload: () => Promise<unknown> } {
     return {
       upload: (): Promise<unknown> => {
         return new Promise((resolve) => {
+          console.log(resolve);
           const body = new FormData();
           loader.file.then((file: File) => {
             body.append('attachment', file);

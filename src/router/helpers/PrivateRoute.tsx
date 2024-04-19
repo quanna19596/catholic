@@ -16,6 +16,7 @@ const PrivateRoute: React.FC<{
 
   return (
     <Suspense fallback={<Fallback />}>
+      {/* <Fallback /> */}
       {errorComponent ? <ErrorBoundary FallbackComponent={errorComponent}>{checkedAuthComponent}</ErrorBoundary> : checkedAuthComponent}
     </Suspense>
   );

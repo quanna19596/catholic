@@ -1,6 +1,7 @@
 import { Outlet, useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
 import { Avatar } from 'primereact/avatar';
+import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 import { MenuItem } from 'primereact/menuitem';
 
 import { PATHS } from '@/router';
@@ -18,19 +19,19 @@ const DashboardLayout: React.FC<TDashboardLayoutProps> = () => {
 
   const items: MenuItem[] = [
     {
-      label: 'Bài viết',
+      label: 'Bố cục trang',
       icon: 'pi pi-file',
-      url: PATHS.PAGE.NEWS_MANAGEMENT()
+      url: PATHS.PAGE.PAGE_LAYOUT_MANAGEMENT()
     },
     {
-      label: 'Bố cục bài viết',
+      label: 'Bố cục bài viết mẫu',
       icon: 'pi pi-objects-column',
       url: PATHS.PAGE.NEWS_LAYOUT_MANAGEMENT()
     },
     {
-      label: 'Bố cục trang',
+      label: 'Bài viết',
       icon: 'pi pi-file',
-      url: PATHS.PAGE.PAGE_LAYOUT_MANAGEMENT()
+      url: PATHS.PAGE.NEWS_MANAGEMENT()
     },
     {
       label: 'Đăng xuất',
@@ -45,7 +46,7 @@ const DashboardLayout: React.FC<TDashboardLayoutProps> = () => {
 
   const handleClickMenuItem = (item: MenuItem): void => {
     if (!item.url) {
-      logout();
+      openDialogConfirmLogout();
       return;
     }
     navigate(`${PATHS.LAYOUT.DASHBOARD()}${item.url}`);
@@ -53,6 +54,19 @@ const DashboardLayout: React.FC<TDashboardLayoutProps> = () => {
 
   const goToDashboardHome = (): void => {
     navigate(PATHS.LAYOUT.DASHBOARD());
+  };
+
+  const openDialogConfirmLogout = (): void => {
+    confirmDialog({
+      message: 'Bạn có muốn đăng xuất ra khỏi hệ thống?',
+      header: 'Đăng xuất',
+      icon: 'pi pi-info-circle',
+      defaultFocus: 'reject',
+      acceptClassName: 'p-button-danger',
+      acceptLabel: 'Đăng xuất',
+      rejectLabel: 'Tiếp tục sử dụng',
+      accept: logout
+    });
   };
 
   return (
@@ -116,6 +130,7 @@ const DashboardLayout: React.FC<TDashboardLayoutProps> = () => {
       <div className='DashboardLayout__main'>
         <Outlet />
       </div>
+      <ConfirmDialog />
     </div>
   );
 };

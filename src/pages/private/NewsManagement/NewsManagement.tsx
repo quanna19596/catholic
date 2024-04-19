@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'primereact/button';
 import { Column } from 'primereact/column';
-import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
+import { confirmDialog } from 'primereact/confirmdialog';
 import { DataTable } from 'primereact/datatable';
 import { Toast } from 'primereact/toast';
 
@@ -77,7 +77,6 @@ const NewsManagement: React.FC<TNewsManagementProps> = () => {
         <Column field='' header='' body={actionsTemplate} />
       </DataTable>
       <Toast ref={toast} />
-      <ConfirmDialog />
     </div>
   );
 };
